@@ -1,0 +1,19 @@
+mat-toolbar {
+  background-color: white !important;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+  z-index: 10;
+}
+
+.toolbar-section {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  & > mat-icon {
+    margin: 2px;
+  }
+}

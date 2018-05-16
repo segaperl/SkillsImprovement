@@ -1,6 +1,23 @@
-<mat-toolbar color="primary">
+<mat-toolbar>
   <mat-toolbar-row>
-    <a routerLink="/">Custom Toolbar</a>
+    <a mat-button routerLink="">
+      Custom Toolbar
+    </a>
+
+    <span class="spacer"></span>
+
+    <div class="toolbar-section">
+      <mat-icon class="md-36">search</mat-icon>
+    </div>
+
+    <div class="toolbar-section">
+      <mat-icon class="md-36">notifications</mat-icon>
+    </div>
+
+    <div class="toolbar-section">
+      <app-toolbar-person></app-toolbar-person>
+    </div>
+
   </mat-toolbar-row>
 </mat-toolbar>
 
