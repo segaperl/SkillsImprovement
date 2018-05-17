@@ -1,0 +1,33 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <a routerLink=""
+       id="home">
+      <div class="item home">
+        <img src="assets/mts-logo.png" alt="" />
+      </div>
+      <div class="item border"></div>
+      <div class="item text">Team</div>
+    </a>
+
+    <div class="nav">
+      <a mat-button href="#">Мои задачи</a>
+      <a mat-button href="#">Проекты</a>
+      <a mat-button href="#">Мои сотрудники</a>
+      <a mat-button href="#">Задачи</a>
+    </div>
+
+    <span class="spacer"></span>
+    <div class="search-section">
+      <app-toolbar-search></app-toolbar-search>
+    </div>
+    <div class="toolbar-section">
+      <mat-icon>notifications</mat-icon>
+    </div>
+    <div class="toolbar-section">
+      <app-toolbar-person></app-toolbar-person>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<router-outlet></router-outlet>

@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { ToolbarPersonComponent } from './menu/toolbar-person/toolbar-person.component';
 import { ToolbarSearchComponent } from './menu/toolbar-search/toolbar-search.component';
 import { ClickOutsideDirective } from './menu/toolbar-search/click-outside.directive';
+import { ToolbarComponent } from './menu/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ClickOutsideDirective } from './menu/toolbar-search/click-outside.direc
     HomeComponent,
     ToolbarPersonComponent,
     ToolbarSearchComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
