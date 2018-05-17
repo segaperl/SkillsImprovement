@@ -2,7 +2,7 @@
   <app-toolbar></app-toolbar>
 
   <mat-sidenav-container class="sidenav-container"
-                         *ngIf="sidenavService.isShown"
+                         *ngIf="sidenavService.isLessLarge"
                          id="menu-sidenav">
     <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
@@ -31,7 +31,7 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 
-  <ng-container *ngIf="!sidenavService.isShown">
+  <ng-container *ngIf="!sidenavService.isLessLarge">
     <router-outlet></router-outlet>
   </ng-container>
 

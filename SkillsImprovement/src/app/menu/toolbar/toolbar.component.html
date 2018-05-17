@@ -1,7 +1,7 @@
 <mat-toolbar id="menu-toolbar">
   <mat-toolbar-row>
     <button mat-icon-button
-            *ngIf="sidenavService.isShown"
+            *ngIf="sidenavService.isLessLarge"
             (click)="sidenavService.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
@@ -14,7 +14,7 @@
       <div class="item border"></div>
       <div class="item text">Team</div>
     </a>
-    <ng-container *ngIf="!sidenavService.isShown">
+    <ng-container *ngIf="!sidenavService.isLessLarge">
       <div class="nav">
         <a mat-button href="#">Мои задачи</a>
         <a mat-button href="#">Проекты</a>
@@ -25,15 +25,18 @@
 
     <span class="spacer"></span>
 
-    <ng-container *ngIf="!sidenavService.isShown">
+    <ng-container *ngIf="sidenavService.isBiggerMiddle">
       <div class="search-section">
         <app-toolbar-search></app-toolbar-search>
       </div>
     </ng-container>
+
+    <span class="spacer"></span>
+
     <div class="toolbar-section">
       <mat-icon>notifications</mat-icon>
     </div>
-    <ng-container *ngIf="!sidenavService.isShown">
+    <ng-container *ngIf="sidenavService.isBiggerMiddle">
       <div class="toolbar-section">
         <app-toolbar-person></app-toolbar-person>
       </div>

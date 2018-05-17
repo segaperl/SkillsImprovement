@@ -22,8 +22,12 @@ export class SidenavService {
     this.widthSubject.next(width);
   }
 
-  get isShown() {
+  get isLessLarge() {
     return this.widthSubject.getValue() < 1350;
+  }
+
+  get isBiggerMiddle() {
+    return this.widthSubject.getValue() >= 950;
   }
 
   setSidenav(sidenav: MatSidenav) {
