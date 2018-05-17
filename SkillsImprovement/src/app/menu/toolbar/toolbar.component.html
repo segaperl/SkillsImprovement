@@ -1,5 +1,11 @@
-<mat-toolbar>
+<mat-toolbar id="menu-toolbar">
   <mat-toolbar-row>
+    <button mat-icon-button
+            *ngIf="sidenavService.isShown"
+            (click)="sidenavService.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
     <a routerLink=""
        id="home">
       <div class="item home">
@@ -8,24 +14,30 @@
       <div class="item border"></div>
       <div class="item text">Team</div>
     </a>
-
-    <div class="nav">
-      <a mat-button href="#">Мои задачи</a>
-      <a mat-button href="#">Проекты</a>
-      <a mat-button href="#">Мои сотрудники</a>
-      <a mat-button href="#">Задачи</a>
-    </div>
+    <ng-container *ngIf="!sidenavService.isShown">
+      <div class="nav">
+        <a mat-button href="#">Мои задачи</a>
+        <a mat-button href="#">Проекты</a>
+        <a mat-button href="#">Мои сотрудники</a>
+        <a mat-button href="#">Задачи</a>
+      </div>
+    </ng-container>
 
     <span class="spacer"></span>
-    <div class="search-section">
-      <app-toolbar-search></app-toolbar-search>
-    </div>
+
+    <ng-container *ngIf="!sidenavService.isShown">
+      <div class="search-section">
+        <app-toolbar-search></app-toolbar-search>
+      </div>
+    </ng-container>
     <div class="toolbar-section">
       <mat-icon>notifications</mat-icon>
     </div>
-    <div class="toolbar-section">
-      <app-toolbar-person></app-toolbar-person>
-    </div>
+    <ng-container *ngIf="!sidenavService.isShown">
+      <div class="toolbar-section">
+        <app-toolbar-person></app-toolbar-person>
+      </div>
+    </ng-container>
   </mat-toolbar-row>
 </mat-toolbar>
 

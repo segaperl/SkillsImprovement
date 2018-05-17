@@ -1,7 +1,9 @@
-mat-toolbar {
+mat-toolbar#menu-toolbar {
   background-color: white !important;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
   z-index: 10;
+  position: absolute;
+  top: 0;
 
   & #home {
     height: 48px;

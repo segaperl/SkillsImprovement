@@ -1,3 +1,38 @@
-<app-toolbar></app-toolbar>
+<div class="container" [class.is-mobile]="mobileQuery.matches">
+  <app-toolbar></app-toolbar>
 
-<router-outlet></router-outlet>
+  <mat-sidenav-container class="sidenav-container"
+                         *ngIf="sidenavService.isShown"
+                         id="menu-sidenav">
+    <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-list>
+        <mat-list-item>
+          <a mat-button href="#" class="nav">Мои задачи</a>
+        </mat-list-item>
+
+        <mat-list-item>
+          <a mat-button href="#" class="nav">Проекты</a>
+        </mat-list-item>
+
+        <mat-list-item>
+          <a mat-button href="#" class="nav">Мои сотрудники</a>
+        </mat-list-item>
+
+        <mat-list-item>
+          <a mat-button href="#" class="nav">Задачи</a>
+        </mat-list-item>
+      </mat-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <ng-container *ngIf="!sidenavService.isShown">
+    <router-outlet></router-outlet>
+  </ng-container>
+
+</div>
