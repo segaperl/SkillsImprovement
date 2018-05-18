@@ -1,19 +1,33 @@
+<ng-template #input>
+  <input type="text" placeholder="Поиск"
+         (focus)="onFocus()"
+         (blur)="onBlur()" />
+</ng-template>
+
+<ng-template #extensions>
+  <div>
+    <mat-checkbox>Проекты</mat-checkbox>
+  </div>
+
+  <div>
+    <mat-checkbox>Люди</mat-checkbox>
+  </div>
+</ng-template>
+
 <ng-container *ngIf="sidenavService.isBiggerMiddle">
   <div class="main"
        [ngClass]="{'active': isFocused || settingsAreActive}">
-    <span matTooltip="Search">
+    <span matTooltip="Поиск">
       <button mat-icon-button>
         <mat-icon>search</mat-icon>
       </button>
     </span>
 
-    <input placeholder="Search" value=""
-           (focus)="onFocus()"
-           (blur)="onBlur()">
+    <ng-container *ngTemplateOutlet="input"></ng-container>
 
     <span class="spacer"></span>
 
-    <span matTooltip="Search extension">
+    <span matTooltip="Расширенные параметры поиска">
       <button mat-icon-button
               (click)="showSettings()"
               id="show-settings">
@@ -35,47 +49,41 @@
   <div class="settings-section"
        [ngClass]="{'active': settingsAreActive}"
        (clickOutside)="outsideClick($event)">
-    <div>
-      <mat-checkbox>Projects</mat-checkbox>
-    </div>
-
-    <div>
-      <mat-checkbox>People</mat-checkbox>
-    </div>
+    <ng-container *ngTemplateOutlet="extensions"></ng-container>
   </div>
 </ng-container>
 
 <ng-container *ngIf="!sidenavService.isBiggerMiddle">
   <div class="mobile"
        (mobileClickOutside)="mobileOutsideClick($event)">
-    <button mat-icon-button
-            (click)="showMobileSearch()">
-      <mat-icon>search</mat-icon>
-    </button>
+    <span matTooltip="Поиск">
+      <button mat-icon-button
+              (click)="showMobileSearch()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </span>
 
     <div class="container"
          [ngClass]="{'active': isMobileActive}">
 
-      <span matTooltip="Search extension">
+      <span matTooltip="Расширенные параметры поиска">
         <button mat-icon-button
                 (click)="showSettings()"
                 id="show-settings">
           <mat-icon>arrow_drop_down</mat-icon>
         </button>
       </span>
-
-      <input type="text" placeholder="Search"
-             (focus)="onFocus()"
-             (blur)="onBlur()"/>
+      
+      <ng-container *ngTemplateOutlet="input"></ng-container>
 
       <span class="spacer"></span>
-      
+
       <button mat-icon-button
               id="close">
         <mat-icon>close</mat-icon>
       </button>
     </div>
-    
+
 
     <div class="search-result"
          [ngClass]="{'active': isFocused}">
@@ -90,13 +98,7 @@
     <div class="settings-section"
          [ngClass]="{'active': settingsAreActive}"
          (clickOutside)="outsideClick($event)">
-      <div>
-        <mat-checkbox>Projects</mat-checkbox>
-      </div>
-
-      <div>
-        <mat-checkbox>People</mat-checkbox>
-      </div>
+      <ng-container *ngTemplateOutlet="extensions"></ng-container>
     </div>
   </div>
 </ng-container>

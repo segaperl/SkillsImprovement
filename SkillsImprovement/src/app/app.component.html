@@ -7,6 +7,22 @@
     <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-list>
+        <ng-container *ngIf="!sidenavService.isBiggerMiddle">
+          <mat-list-item>
+            <a mat-button href="#" class="nav">
+              <mat-icon>account_circle</mat-icon>
+              Профиль
+            </a>
+          </mat-list-item>
+
+          <mat-list-item>
+            <a mat-button href="#" class="nav">
+              <mat-icon>notifications</mat-icon>
+              Уведомления
+            </a>
+          </mat-list-item>
+        </ng-container>
+
         <mat-list-item>
           <a mat-button href="#" class="nav">Мои задачи</a>
         </mat-list-item>
@@ -26,7 +42,6 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

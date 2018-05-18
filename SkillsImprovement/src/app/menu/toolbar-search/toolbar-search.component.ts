@@ -37,7 +37,6 @@ export class ToolbarSearchComponent implements OnInit {
 
   mobileOutsideClick(event: boolean) {
     this.isMobileActive = event;
-    console.log(event);
   }
 
   showMobileSearch() {

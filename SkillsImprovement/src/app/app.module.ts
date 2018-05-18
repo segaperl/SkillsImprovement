@@ -16,7 +16,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
-import { ToolbarPersonComponent } from './menu/toolbar-person/toolbar-person.component';
 import { ToolbarSearchComponent } from './menu/toolbar-search/toolbar-search.component';
 import { ClickOutsideDirective } from './menu/toolbar-search/click-outside.directive';
 import { ToolbarComponent } from './menu/toolbar/toolbar.component';
@@ -26,7 +25,6 @@ import { MobileClickOutsideDirective } from './menu/toolbar-search/mobile-click-
   declarations: [
     AppComponent,
     HomeComponent,
-    ToolbarPersonComponent,
     ToolbarSearchComponent,
     ClickOutsideDirective,
     ToolbarComponent,
