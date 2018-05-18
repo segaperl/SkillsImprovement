@@ -20,6 +20,7 @@ import { ToolbarPersonComponent } from './menu/toolbar-person/toolbar-person.com
 import { ToolbarSearchComponent } from './menu/toolbar-search/toolbar-search.component';
 import { ClickOutsideDirective } from './menu/toolbar-search/click-outside.directive';
 import { ToolbarComponent } from './menu/toolbar/toolbar.component';
+import { MobileClickOutsideDirective } from './menu/toolbar-search/mobile-click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ToolbarComponent } from './menu/toolbar/toolbar.component';
     ToolbarPersonComponent,
     ToolbarSearchComponent,
     ClickOutsideDirective,
-    ToolbarComponent
+    ToolbarComponent,
+    MobileClickOutsideDirective
   ],
   imports: [
     BrowserModule,

@@ -24,19 +24,18 @@
     </ng-container>
 
     <span class="spacer"></span>
-
-    <ng-container *ngIf="sidenavService.isBiggerMiddle">
-      <div class="search-section">
-        <app-toolbar-search></app-toolbar-search>
-      </div>
-    </ng-container>
-
-    <span class="spacer"></span>
-
-    <div class="toolbar-section">
-      <mat-icon>notifications</mat-icon>
+    
+    <div class="search-section">
+      <app-toolbar-search></app-toolbar-search>
     </div>
+    
     <ng-container *ngIf="sidenavService.isBiggerMiddle">
+      <span class="spacer"></span>
+
+      <div class="toolbar-section">
+        <mat-icon>notifications</mat-icon>
+      </div>
+
       <div class="toolbar-section">
         <app-toolbar-person></app-toolbar-person>
       </div>

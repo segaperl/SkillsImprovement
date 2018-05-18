@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, HostListener } from '@angular/core';
+import { SidenavService } from '../sidenav.service';
 
 @Component({
   selector: 'app-toolbar-search',
@@ -9,8 +10,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class ToolbarSearchComponent implements OnInit {
   isFocused = false;
   settingsAreActive = false;
+  isMobileActive = false;
 
-  constructor() { }
+  constructor(private readonly sidenavService: SidenavService) { }
 
   ngOnInit() {
   }
@@ -31,5 +33,14 @@ export class ToolbarSearchComponent implements OnInit {
 
   outsideClick(event: boolean) {
     this.settingsAreActive = event;
+  }
+
+  mobileOutsideClick(event: boolean) {
+    this.isMobileActive = event;
+    console.log(event);
+  }
+
+  showMobileSearch() {
+    this.isMobileActive = true;
   }
 }

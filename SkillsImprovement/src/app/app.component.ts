@@ -29,7 +29,9 @@ export class AppComponent implements AfterViewInit {
     this.sidenavService.width
       .subscribe(width => {
         if (width < 1350 && !init) {
-          this.sidenavService.setSidenav(this.sidenav);
+          setTimeout(() => {
+            this.sidenavService.setSidenav(this.sidenav);
+          });
           init = true;
         } else {
           init = false;
