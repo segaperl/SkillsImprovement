@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, HostListener } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { SidenavService } from '../sidenav.service';
 
 @Component({
@@ -7,15 +7,12 @@ import { SidenavService } from '../sidenav.service';
   styleUrls: ['./toolbar-search.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ToolbarSearchComponent implements OnInit {
+export class ToolbarSearchComponent {
   isFocused = false;
   settingsAreActive = false;
   isMobileActive = false;
 
-  constructor(private readonly sidenavService: SidenavService) { }
-
-  ngOnInit() {
-  }
+  constructor(readonly sidenavService: SidenavService) { }
 
   onFocus() {
     this.isFocused = true;
